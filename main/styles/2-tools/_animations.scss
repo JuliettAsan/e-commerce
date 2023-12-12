@@ -1,0 +1,9 @@
+@keyframes up-dowm {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    opacity: 0.8;
+    transform: translateY(2rem);
+  }
+}

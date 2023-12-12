@@ -1,0 +1,11 @@
+.is-mobile {
+  @include mediaMin(md) {
+    display: none !important;
+  }
+}
+
+.is-desktop {
+  @include mediaMax(sm) {
+    display: none !important;
+  }
+}

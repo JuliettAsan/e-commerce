@@ -1,0 +1,13 @@
+{
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "@configAWS": ["configureAmplify.js"],
+      "@session": ["main/hooks/useSession.js"],
+      "@/modules/*": ["main/components/modules/*"],
+      "@/ui/*": ["main/components/ui/*"],
+      "@/redux/*": ["main/redux/*"],
+      "@/*": ["./*"]
+    }
+  }
+}

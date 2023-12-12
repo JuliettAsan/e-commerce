@@ -1,0 +1,129 @@
+/* =====================
+    * FONTS *
+===================== */
+
+$font-sora: "Sora", sans-serif;
+
+/* =====================
+    * COLORS EXPLORA *
+===================== */
+
+$red-1: #ff7777;
+$red-2: #ff6262;
+$red-3: #f45858;
+$red-4: #d55050;
+$red-5: #c34848;
+
+$yellow-1: #ffe874;
+$yellow-2: #ffdb24;
+$yellow-3: #f9d51d;
+$yellow-4: #e0c122;
+$yellow-5: #d3b622;
+
+$green-1: #8ae08f;
+$green-2: #7fce84;
+$green-3: #70be75;
+$green-4: #64aa69;
+$green-5: #609d64;
+
+$orange-1: #ff946e;
+$orange-2: #ff6b36;
+$orange-3: #f6571e;
+$orange-4: #db5220;
+$orange-5: #c95125;
+
+$gray-1: #e6e6e6;
+$gray-2: #e8e8ed;
+$gray-3: #f2f2f7;
+$gray-4: #d6d6d6;
+$gray-5: #b7b7c1;
+$gray-6: #8a8a98;
+$gray-7: #707074;
+$gray-8: #c3c3c3;
+
+$black-1: #000;
+$black-2: #44444a;
+
+$blue-in: #0c9bf0;
+$green-in: #6cd078;
+$yellow-in: #ffe243;
+
+$blue: $blue-in;
+$green: $green-in;
+$yellow: $yellow-in;
+$red: $red-2;
+$black: $black-2;
+
+$white: #fff;
+
+/* =====================
+    * THEME COLORS *
+===================== */
+
+$primary-color: $blue;
+$primary-text-color: $white;
+$secondary-color: $green;
+$accent-color: $yellow;
+
+/* =====================
+    * FONTS *
+===================== */
+
+$primary-font: var(--sora-font);
+$font-sora: var(--sora-font);
+
+/* =====================
+    * BREAKPOINTS *
+===================== */
+
+$breakpoint-xs: 360px;
+$breakpoint-sm: 576px;
+$breakpoint-md: 768px;
+$breakpoint-lg: 992px;
+$breakpoint-xl: 1200px;
+$breakpoint-xxl: 1400px;
+$breakpoint-xxxl: 1600px;
+
+/* =====================
+    * FONT-SIZE *
+===================== */
+
+$h1-font-size: 4.0625rem;
+$h2-font-size: 3.75rem;
+$h3-font-size: 3.125rem;
+$h4-font-size: 2.5rem;
+$h5-font-size: 1.68rem;
+
+$font-sizes: (
+  1: $h1-font-size,
+  2: $h2-font-size,
+  3: $h3-font-size,
+  4: $h4-font-size,
+  5: $h5-font-size,
+);
+
+$p1-font-size: 1.375rem;
+$p2-font-size: 1.125rem;
+$p3-font-size: 1rem;
+$p4-font-size: 0.875rem;
+$p5-font-size: 0.7rem;
+
+@media (max-width: $breakpoint-xxl) {
+  $p1-font-size: 1.125rem;
+  $p2-font-size: 0.875rem;
+  $p3-font-size: 0.8;
+  $p4-font-size: 0.8;
+}
+
+@media (max-width: $breakpoint-sm) {
+  $p1-font-size: 1.125rem;
+  $p2-font-size: 0.875rem;
+  $p3-font-size: 0.8125rem;
+  $p4-font-size: 0.8125rem;
+  $p5-font-size: 0.5rem;
+}
+
+/* =====================
+    * BUTTONS *
+===================== */
+$btn-border-radius: 0;

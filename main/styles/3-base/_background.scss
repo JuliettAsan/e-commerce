@@ -1,0 +1,41 @@
+.blur-bg {
+  background-color: rgba($primary-color, 0.6);
+  backdrop-filter: blur(7.5px);
+}
+
+.has-bg-primary {
+  background-color: $primary-color;
+  color: $primary-text-color;
+}
+
+.has-bg-secondary {
+  background-color: $secondary-color;
+}
+
+.has-bg-accent {
+  background-color: $accent-color;
+}
+
+.has-bg-white {
+  background-color: $white;
+}
+
+.is-red {
+  background-color: $red;
+  color: $white;
+}
+
+.is-blue {
+  background-color: $blue;
+  color: $white;
+}
+
+.is-green {
+  background-color: $green;
+  color: $white;
+}
+
+.is-yellow {
+  background-color: $yellow;
+  color: $black-1;
+}

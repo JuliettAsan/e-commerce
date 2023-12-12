@@ -1,0 +1,219 @@
+$navbar-height: 6.2rem;
+$navbar-width: 100vw;
+$navbar-bg-color: $primary-color;
+$navbar-text-color: $primary-text-color;
+$navbar-text-color-hover: $accent-color;
+$vnavbar-width: 12rem;
+
+.navbar {
+  height: $navbar-height;
+  min-height: $navbar-height;
+  max-height: $navbar-height;
+  width: $navbar-width;
+  background-color: $navbar-bg-color;
+  color: $navbar-text-color;
+
+  position: fixed;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+
+  padding: 0 3rem;
+  z-index: 1000;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+
+  @include mediaMax(lg) {
+    padding: 0 2rem;
+  }
+
+  @include mediaMax(md) {
+    $navbar-height: 5rem;
+    min-height: $navbar-height;
+    max-height: $navbar-height;
+    padding: 0 0rem;
+    overflow: visible;
+  }
+
+  @include mediaMax(sm) {
+    width: 100vw;
+    padding: 0 1rem;
+  }
+
+  &-logo {
+    width: 15vw;
+    display: grid;
+    grid-template-areas: "main";
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+    align-items: center;
+    justify-items: center;
+
+    & svg,
+    & .image {
+      grid-area: main;
+      position: relative;
+      max-width: 80vw;
+      max-height: calc($navbar-height - 1rem);
+    }
+
+    @include mediaMax(md) {
+      width: 10rem;
+    }
+  }
+
+  &-space {
+    flex-grow: 1;
+  }
+
+  &-item {
+    @extend .is-size-2;
+    margin: 0 1rem;
+    transition: all 0.3s ease-in-out;
+    position: relative;
+    padding: 1rem 0;
+
+    &:hover {
+      cursor: pointer;
+      transition: all 0.3s ease-in-out;
+    }
+
+    &:after {
+      position: absolute;
+      content: "";
+      height: 3px;
+      background-color: $navbar-text-color-hover;
+      width: 0;
+      display: block;
+      transition: all 0.5s ease 0s;
+    }
+    &.is-active:after,
+    &:hover:after {
+      width: 40px;
+      transition: all 0.5s ease 0s;
+    }
+
+    &-btn {
+      &:hover {
+        text-decoration: none;
+      }
+    }
+
+    &.is-bold {
+      @extend .is-size-2;
+      font-weight: 700;
+    }
+  }
+
+  & > &-item {
+    @extend .is-desktop;
+  }
+
+  &-user {
+    @extend .navbar-item;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    cursor: pointer;
+    padding-left: 1rem;
+    position: relative;
+
+    &::after {
+      display: none;
+    }
+
+    &-image {
+      width: 3rem;
+      height: 3rem;
+      aspect-ratio: 1/1;
+      border-radius: 50%;
+      background-color: $accent-color;
+      background-position: center center;
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+
+    &-menu {
+      position: absolute;
+      display: none;
+      top: 100%;
+      left: 0;
+      width: 120%;
+      padding: 1rem 2rem;
+
+      background-color: $navbar-bg-color;
+    }
+    &:hover > .navbar-user-menu {
+      display: block;
+    }
+  }
+
+  &-icon {
+    @extend .icon;
+    //@extend .icon-menu;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    margin: auto 1rem;
+    cursor: pointer;
+    width: 2rem;
+    aspect-ratio: 1/1;
+    background-image: url("/assets/icons/toggle-nav.svg");
+    background-size: contain;
+    background-repeat: no-repeat;
+  }
+
+  &.is-active > &-icon {
+    //@extend .icon-menu-open;
+  }
+
+  &-mobile {
+    @extend .is-mobile;
+    background-color: $navbar-bg-color;
+    color: $navbar-text-color;
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    padding: 1rem;
+    z-index: 5000000;
+
+    position: fixed;
+    top: 0rem;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100vw;
+
+    & > .navbar-item {
+      padding: 1rem 0.5rem;
+      @extend .is-size-1;
+    }
+    & > .navbar-item-btn {
+      padding: 0.3rem 1rem;
+      align-self: flex-start;
+      margin-bottom: 1rem;
+      border: $accent-color solid 1px;
+    }
+    &-bg {
+      background-color: transparent;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      z-index: 99;
+      display: none;
+    }
+  }
+
+  &.is-active ~ &-mobile {
+    display: flex;
+
+    &-bg {
+      display: block;
+    }
+  }
+}

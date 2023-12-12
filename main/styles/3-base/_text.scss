@@ -1,0 +1,98 @@
+.is-size {
+  &-1 {
+    font-size: $p1-font-size;
+  }
+
+  &-2 {
+    font-size: $p2-font-size;
+  }
+
+  &-3 {
+    font-size: $p3-font-size;
+    line-height: 1.5em;
+  }
+
+  &-4 {
+    font-size: $p4-font-size;
+    line-height: 1.8em;
+    font-weight: 600;
+  }
+
+  &-5 {
+    font-size: $p5-font-size;
+  }
+}
+
+.is-light {
+  font-weight: 200;
+}
+
+.is-regular {
+  font-weight: 400;
+}
+
+.is-semibold {
+  font-weight: 600;
+}
+
+.is-bold {
+  font-weight: 700;
+}
+
+.is-extrabold {
+  font-weight: 800;
+}
+
+.fs- {
+  &1 {
+    font-size: $h1-font-size;
+    line-height: 1em;
+  }
+
+  &2 {
+    font-size: $h2-font-size;
+    line-height: 1em;
+
+    @include mediaMax(sm) {
+      font-size: $h3-font-size;
+    }
+  }
+
+  &3 {
+    font-size: $h3-font-size;
+    line-height: 1em;
+
+    @include mediaMax(sm) {
+      font-size: $h4-font-size;
+    }
+  }
+
+  &4 {
+    font-size: $h4-font-size;
+    line-height: 1em;
+
+    @include mediaMax(sm) {
+      font-size: $h5-font-size;
+    }
+  }
+
+  &5 {
+    font-size: $h5-font-size;
+  }
+}
+
+.text-uppercase {
+  text-transform: uppercase;
+}
+
+.is-color-red {
+  color: $red-1;
+}
+
+.is-color-primary {
+  color: $primary-color;
+}
+
+.is-color-blue {
+  color: $blue;
+}

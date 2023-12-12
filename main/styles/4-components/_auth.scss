@@ -1,0 +1,173 @@
+.auth {
+  // set an image Here
+  background-image: url("/assets/bannerAuth.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+
+  &Card {
+    background-color: #fff;
+    width: 80%;
+    max-width: 500px;
+    border-radius: 2rem;
+    padding: 1.5rem;
+    height: auto;
+    position: relative;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    gap: 0.7rem;
+    @include mediaMin(sm) {
+      padding: 2rem;
+      gap: 1rem;
+    }
+    &Title {
+      color: $primary-color;
+      text-align: center;
+      text-transform: uppercase;
+    }
+
+    &Descr {
+      margin: 1rem;
+      max-width: 400px;
+      text-align: center;
+      @extend .is-size-3;
+    }
+
+    &Content {
+      width: 100%;
+      text-align: center;
+      @include mediaMin(sm) {
+        padding: 0 2rem;
+      }
+      &Description {
+        margin-bottom: 1rem;
+        max-width: 300px;
+        @extend .is-size-3;
+      }
+
+      &Sign {
+        color: $primary-color;
+        text-decoration: underline;
+        cursor: pointer;
+        @extend .is-size-4;
+        width: 100%;
+        display: inline-block;
+      }
+    }
+
+    &Form {
+      width: 90%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 0.7rem;
+      @include mediaMin(sm) {
+        gap: 1rem;
+      }
+
+      &Section {
+        width: 100%;
+
+        &Label {
+          @extend .is-size-4;
+          color: $black;
+        }
+        &Input {
+          width: 100%;
+          height: 2rem;
+          border-radius: 1rem;
+          border: solid 1px #707070;
+          padding: 0.5rem 1rem;
+        }
+        & span {
+          color: $primary-color;
+          font-size: $p5-font-size;
+        }
+      }
+    }
+
+    &Footer {
+      width: 90%;
+      display: flex;
+      flex-direction: column;
+      border-top: 1px solid #000;
+      width: 100%;
+      text-align: center;
+      text-decoration: underline;
+      padding-top: 1rem;
+      cursor: pointer;
+      @extend .is-size-5;
+      @extend .is-semibold;
+    }
+  }
+}
+
+// Buttons used in logIn
+.btnAuth {
+  background-color: $secondary-color;
+  border: none;
+  color: #fff;
+  padding: 0.4rem 1rem;
+  text-align: center;
+  cursor: pointer;
+  border-radius: 1.5rem;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  margin: auto;
+  @extend .is-size-4;
+
+  &:hover {
+    background-color: darken($accent-color, 1);
+  }
+
+  &.is-loading {
+    cursor: not-allowed;
+    color: transparent;
+    &::after {
+      content: "";
+      position: absolute;
+      width: 16px;
+      height: 16px;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      margin: auto;
+      border: 4px solid transparent;
+      border-top-color: #ffffff;
+      border-radius: 50%;
+      animation: button-loading-spinner 0.7s infinite;
+      animation-timing-function: linear;
+    }
+  }
+}
+
+@keyframes button-loading-spinner {
+  from {
+    transform: rotate(0turn);
+  }
+
+  to {
+    transform: rotate(1turn);
+  }
+}
+
+.bg-success {
+  background-color: $green;
+}
+
+.bg-error {
+  background-color: $red;
+}

@@ -1,0 +1,199 @@
+.btn {
+  @extend .is-size-3;
+  padding: 0.5rem 1rem 0.5rem 1rem;
+  background-color: $red-3;
+  color: $white;
+  text-transform: uppercase;
+  position: relative;
+  border: none;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  &:after {
+    content: "";
+    background: $yellow-1;
+    position: absolute;
+    width: 35%;
+    max-width: 100px;
+    height: 10px;
+    bottom: -10px;
+    left: 0;
+    transition: all 0.5s ease 0s;
+  }
+
+  &:hover {
+    color: $white;
+
+    &:before {
+      transform: translateX(5px);
+      transition: all 0.5s ease 0s;
+    }
+
+    &:after {
+      width: 100%;
+      max-width: 100%;
+      transition: all 0.5s ease 0s;
+    }
+  }
+
+  &.has-border-green::after {
+    background: $green-3;
+  }
+
+  &.is-green {
+    background-color: $green-3;
+  }
+
+  &.is-gray {
+    background-color: $gray-5;
+    color: $black-2;
+    text-align: center;
+    justify-content: center;
+  }
+
+  &.is-yellow {
+    background-color: $yellow-2;
+    color: $black-2;
+    &::after {
+      background: $red-2;
+    }
+  }
+
+  &-simple::after {
+    display: none;
+  }
+
+  &.btn-outline {
+    background-color: transparent;
+    border: 2px solid $white;
+    transition: all 0.5s ease 0s;
+    color: $white;
+    position: relative;
+    @extend .no-icon;
+
+    &::after {
+      background-color: rgba($white, 0.2);
+      transition: all 0.5s ease 0s;
+      width: 0;
+      top: 0;
+      left: 0;
+      height: 100%;
+    }
+
+    &:hover:after {
+      transition: all 0.5s ease 0s;
+      width: 100%;
+    }
+
+    &.is-black {
+      color: $black;
+      border-color: rgba($black, 0.2);
+      background-color: rgba($black, 0.2);
+
+      &::after {
+        background-color: rgba($black, 0.3);
+      }
+    }
+  }
+
+  &.icon-whatsapp::before {
+    content: "\e962";
+  }
+
+  &.icon-download::before {
+    content: "\e916";
+    font-size: 1.3rem;
+  }
+
+  &.icon-left {
+    padding: 20px 30px 20px 70px;
+    &::before {
+      left: 25px;
+      height: 100%;
+      top: 0;
+      display: flex;
+      align-items: center;
+      font-size: 1.3rem;
+    }
+    &:hover {
+      border-color: $white;
+      transition: all 0.5s ease 0s;
+      &::before {
+        transform: translate3d(3px, 0, 0);
+      }
+    }
+  }
+
+  &.target {
+    padding: 10px 20px;
+    justify-content: center;
+    align-items: center;
+    &::before {
+      display: none;
+    }
+    &::after {
+      background-color: rgb(255 255 255 / 10%);
+      transition: all 0.5s ease 0s;
+      width: 0;
+      height: 100%;
+      bottom: 0;
+      left: 0;
+    }
+    &:hover:after {
+      width: 100%;
+      transition: all 0.5s ease 0s;
+    }
+  }
+
+  &.hover-gray {
+    &::after {
+      background-color: rgb(62 62 62 / 30%);
+      transition: all 0.5s ease 0s;
+    }
+  }
+
+  &.no-icon {
+    padding: 0.5rem 3rem;
+    &::before {
+      display: none;
+    }
+  }
+
+  &.is-loading {
+    color: transparent !important;
+    pointer-events: none;
+    position: relative;
+    height: 3.5rem;
+
+    @keyframes spinner-border {
+      to {
+        -webkit-transform: rotate(360deg);
+        transform: rotate(360deg);
+      }
+    }
+
+    &::after {
+      left: calc(50% - 0.8em);
+      top: calc(50% - 0.8em);
+      -webkit-animation: spinner-border 0.75s linear infinite;
+      animation: spinner-border 0.75s linear infinite;
+      border-radius: 290486px;
+      background: transparent;
+      border-color: transparent #ffffff #ffffff;
+      border-style: solid;
+      border-width: 1.5px;
+      content: "";
+      height: 1.5rem;
+      width: 1.5rem;
+      cursor: not-allowed !important;
+    }
+  }
+}
+
+.content-button {
+  display: flex;
+  margin-top: 2rem;
+  gap: 1rem;
+  justify-content: space-between;
+}
