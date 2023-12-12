@@ -171,8 +171,7 @@ export default function AuthModule() {
   return (
     <>
       <Head>
-        <title>Autenticación Explora</title>
-        <meta name="description" content="Creado por el área de TI Explora" />
+        <title>Autenticación </title>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>

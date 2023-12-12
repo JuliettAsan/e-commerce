@@ -16,14 +16,14 @@ export default function AuthLayout({ description, children }) {
             className="authCardFooter"
             onClick={() => router.push("/?page=forgotPassword")}
           >
-            ¿ OLVIDASTE LA CONTRASEÑA ?
+            Forgot password
           </a>
         )}
         {(page == "forgotPassword" ||
           page == "recoveryPassword" ||
           page == "") && (
           <a className="authCardFooter" onClick={() => router.push("/")}>
-            CANCELAR
+            CANCEL
           </a>
         )}
       </div>

@@ -38,13 +38,13 @@ export default function ForgotPassword({
       >
         {/* Correo electrónico */}
         <div className="authCardFormSection">
-          <label className="authCardFormSectionLabel">Correo electrónico</label>
+          <label className="authCardFormSectionLabel">Email</label>
           <input
             className="authCardFormSectionInput"
             name="email"
             type="email"
             aria-label="Email"
-            placeholder="Correo electrónico"
+            placeholder="Email"
             onChange={formik.handleChange}
             onBlur={formik.handleBlur}
             value={formik.values.email}
@@ -59,7 +59,7 @@ export default function ForgotPassword({
           alt="Forgot Password"
           aria-label="Forgot Password"
         >
-          Restablecer contraseña
+          Reset password
         </button>
       </form>
     </div>

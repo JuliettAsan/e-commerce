@@ -59,11 +59,11 @@ export default function SignIn({ signIn, loading, toggleLoading }) {
             onClick={() => logWithGoogle(2)}
           >
             <span className="icon icon-google"></span>
-            Iniciar con Google
+            Log in with Google
           </button>
           <span>o</span>
           <Link className="authCardContentSign" href="/?page=signIn">
-            Tengo un usuario y contraseña
+            I have a username and password
           </Link>
         </div>
       )}
@@ -73,16 +73,14 @@ export default function SignIn({ signIn, loading, toggleLoading }) {
           <form className="authCardForm" onSubmit={formik.handleSubmit}>
             {/* Correo electrónico */}
             <div className="authCardFormSection">
-              <label className="authCardFormSectionLabel">
-                Correo electrónico
-              </label>
+              <label className="authCardFormSectionLabel">Email</label>
               <br />
               <input
                 className="authCardFormSectionInput"
                 name="email"
                 type="email"
                 aria-label="email"
-                placeholder="Ingresa email"
+                placeholder="Email"
                 onChange={formik.handleChange}
                 onBlur={formik.handleBlur}
                 value={formik.values.email}
@@ -92,14 +90,14 @@ export default function SignIn({ signIn, loading, toggleLoading }) {
 
             {/* Contraseña */}
             <div className="authCardFormSection">
-              <label className="authCardFormSectionLabel">Contraseña</label>
+              <label className="authCardFormSectionLabel">Password</label>
               <br />
               <input
                 className="authCardFormSectionInput"
                 type="password"
                 name="password"
                 aria-label="password"
-                placeholder="Ingrega la contraseña"
+                placeholder="Password"
                 onChange={formik.handleChange}
                 onBlur={formik.handleBlur}
                 value={formik.values.password}
@@ -116,7 +114,7 @@ export default function SignIn({ signIn, loading, toggleLoading }) {
               type="submit"
               className={`btnAuth ${loading == 1 ? "is-loading" : ""}`}
             >
-              Iniciar sesión
+              Log In
             </button>
           </form>
           <span>o</span>
@@ -128,7 +126,7 @@ export default function SignIn({ signIn, loading, toggleLoading }) {
             onClick={() => logWithGoogle(2)}
           >
             <span className="icon icon-google"></span>
-            Iniciar con Google
+            Log in with Google
           </button>
         </>
       )}
