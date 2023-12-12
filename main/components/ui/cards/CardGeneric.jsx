@@ -17,7 +17,7 @@ export default function CardGeneric({ data }) {
               </a>
 
               <div className="cardGeneric-date">
-                <p>{item?.price} USD</p>
+                <p>{item?.price || "20"} USD</p>
               </div>
 
               <div className="cardGeneric-body">

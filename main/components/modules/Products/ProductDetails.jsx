@@ -17,9 +17,9 @@ export default function ProductDetails({ data, id }) {
 
   const [quantity, setQuantity] = useState(1);
   const [formState, setFormState] = useState({
-    name: "" || data.name,
-    description: "" || data.description,
-    price: "" || data.price,
+    name: data.name,
+    description: data.description,
+    price: data.price,
   });
   const [disabled, setDisabled] = useState(true);
 
@@ -119,8 +119,10 @@ export default function ProductDetails({ data, id }) {
                 disabled={disabled}
               />
             </h3>
-            <input
-              type="text"
+            <textarea
+              rows="5"
+              cols="33"
+              type="textArea"
               name="description"
               className=""
               placeholder={data.description}
@@ -183,8 +185,8 @@ export default function ProductDetails({ data, id }) {
             </div>
           </div>
         </div>
+        <Notify />
       </div>
-      <Notify />
     </>
   );
 }
