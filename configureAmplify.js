@@ -1,6 +1,6 @@
 import { Amplify } from "aws-amplify";
-import config from "./src/aws-exports";
-
+/* import config from "./src/aws-exports";
+ */
 const updatedconfig = {
   ...config,
   oauth: {
