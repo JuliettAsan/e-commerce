@@ -1,26 +1,12 @@
 import MainLayout from "@/main/components/layouts/MainLayout";
-import useSWR from "swr";
 import { fetcher } from "@/main/lib/fetcher";
-import Loading from "@/ui/Loading/Loading";
 import Error from "next/error";
-import CardGeneric from "@/ui/cards/CardGeneric";
-import ProductDetails from "@/modules/Products/productDetails";
+import ProductDetails from "../../main/components/modules/Products/ProductDetails";
 import { useEffect, useState } from "react";
-import { useRouter } from "next/router";
 
 const getData = async (id) => {
   try {
     const res = await fetcher(`/api/products/${id}`, "GET");
-    return res;
-  } catch (error) {
-    return error;
-  }
-};
-
-const updateData = async (id, body) => {
-  try {
-    let requestBody = JSON.stringify(body);
-    const res = await fetcher(`/api/products/${id}`, "PUT", requestBody);
     return res;
   } catch (error) {
     return error;
@@ -38,7 +24,6 @@ const Index = ({ id }) => {
     status: "",
   });
   const [data, setData] = useState(false);
-  const { push } = useRouter();
 
   useEffect(() => {
     const get = async () => {
